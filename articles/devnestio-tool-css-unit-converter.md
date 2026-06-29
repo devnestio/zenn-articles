@@ -1,127 +1,73 @@
 ---
-title: "CSSユニットコンバーターをVanilla JSで作った"
+title: "CSSの単位を一括変換するブラウザツールを作った（px/em/rem/vw/vh/% 10単位対応）"
 emoji: "📐"
-type: tech
-topics: ["javascript", "css", "webdev", "tools"]
-published: false
+type: "tech"
+topics: ["css", "javascript", "devtools", "frontend", "cloudflare"]
+published: true
 ---
 
-## これは何？
+## 作ったもの
 
-[DevNest.io](https://devnestio.pages.dev/) のツールとして作ったCSSユニットコンバーターです。
+開発者向け無料ツール群「devnestio」に、**CSS Unit Converter** を追加しました。
 
-**URL**: https://css-unit-converter.pages.dev/
+👉 https://css-unit-converter-edi.pages.dev
 
-px・em・rem・%・vw・vh・pt・pc・cm・mm・in の11単位を相互変換します。ベースフォントサイズ、ビューポートサイズ、親要素サイズをカスタマイズでき、実際のプロジェクト環境に合わせた変換が可能です。
+値と単位を入力すると、残り9単位の変換結果をリアルタイムで全表示します。
 
-## 実装
+---
 
-### 物理単位の定数
+## 対応単位（10種類）
 
-```js
-const PX_PER_PT = 96 / 72;         // CSS: 1pt = 1/72in, 1in = 96px
-const PX_PER_PC = PX_PER_PT * 12;  // 1pc = 12pt
-const PX_PER_CM = 96 / 2.54;       // 1in = 2.54cm
-const PX_PER_MM = PX_PER_CM / 10;
-const PX_PER_IN = 96;
-```
+| 単位 | 説明 |
+|------|------|
+| `px` | ピクセル（絶対値） |
+| `em` | 親要素のフォントサイズ基準 |
+| `rem` | ルート要素のフォントサイズ基準 |
+| `vw` | ビューポート幅の % |
+| `vh` | ビューポート高の % |
+| `%` | 親要素サイズの % |
+| `pt` | ポイント（1pt = 1/72 in） |
+| `cm` | センチメートル |
+| `mm` | ミリメートル |
+| `in` | インチ |
 
-CSS仕様の基準ピクセルは `1in = 96px`。そこから他の物理単位を導出します。`pt` はDTPの伝統的な単位（1pt = 1/72in）、`pc`（パイカ）は12ptです。
+---
 
-### 任意単位 → px 変換
+## 主な機能
 
-```js
-function toPx(value, unit, ctx) {
-  switch (unit) {
-    case 'px':  return value;
-    case 'em':  return value * ctx.baseFontPx;
-    case 'rem': return value * ctx.baseFontPx;
-    case 'pct': return value / 100 * ctx.parentPx;
-    case 'vw':  return value / 100 * ctx.vpWidth;
-    case 'vh':  return value / 100 * ctx.vpHeight;
-    case 'pt':  return value * PX_PER_PT;
-    case 'pc':  return value * PX_PER_PC;
-    case 'cm':  return value * PX_PER_CM;
-    case 'mm':  return value * PX_PER_MM;
-    case 'in':  return value * PX_PER_IN;
-    default:    return null;
-  }
-}
-```
+- **リアルタイム変換** — 入力のたびに全10単位を即座に更新
+- **設定可能なパラメータ**:
+  - ベースフォントサイズ（デフォルト 16px）
+  - ビューポート幅（デフォルト 1440px）
+  - ビューポート高（デフォルト 900px）
+  - 親要素サイズ（デフォルト 1440px）
+- **CSSコピー** — `1rem` / `14.4vw` のような CSS 対応フォーマットでコピー
+- **変換式パネル** — em/rem/vw/vh/%/pt/cm/in の計算式を表示
+- ソース単位のカードをハイライト表示
 
-コンテキスト依存単位（em・rem・%・vw・vh）は `ctx` オブジェクトの設定値を使用。物理単位（pt・pc・cm・mm・in）は定数で計算するためコンテキスト不要。
+---
 
-### px → 任意単位 変換
+## なぜ設定項目が必要か
 
-```js
-function fromPx(px, unit, ctx) {
-  switch (unit) {
-    case 'em':  return px / ctx.baseFontPx;
-    case 'rem': return px / ctx.baseFontPx;
-    case 'pct': return px / ctx.parentPx * 100;
-    case 'vw':  return px / ctx.vpWidth * 100;
-    case 'vh':  return px / ctx.vpHeight * 100;
-    // ...
-  }
-}
-```
+`vw` はビューポート幅が分からないと変換できません。`%` は親要素サイズが必要です。`em` は現在のフォントサイズに依存します。これらを固定値にすると、プロジェクトの実際の値と異なる計算結果になります。
 
-### 全単位への一括変換
+デフォルト値（16px フォント、1440×900 ビューポート）を設定しつつ、その場で変更できる設計にしました。
 
-```js
-function convertAll(value, fromUnit, ctx) {
-  const px = toPx(value, fromUnit, ctx);
-  if (px === null) return null;
-  const result = {};
-  for (const u of UNITS) result[u] = fromPx(px, u, ctx);
-  return result;
-}
-```
-
-入力を一度pxに変換し、そこから全11単位に変換します。px を中間表現として使うことで変換ロジックを一箇所に集約できます。
-
-### 数値フォーマット
-
-```js
-function formatValue(n) {
-  if (n === null || isNaN(n) || !isFinite(n)) return '—';
-  const abs = Math.abs(n);
-  if (abs === 0) return '0';
-  if (abs < 0.001) return n.toExponential(4);
-  if (abs < 1) return parseFloat(n.toFixed(6)).toString();
-  return parseFloat(n.toFixed(4)).toString();
-}
-```
-
-`parseFloat(n.toFixed(4)).toString()` で末尾ゼロを除去（`"1.5000"` → `"1.5"`）。`0.001` 未満は指数表記。
-
-## 機能
-
-- **11単位対応** — px / em / rem / % / vw / vh / pt / pc / cm / mm / in
-- **カスタムコンテキスト** — ベースフォントサイズ・ビューポート幅/高さ・親要素サイズを設定
-- **全単位を一覧表示** — 入力値を変更するたびに全11単位をリアルタイム更新
-- **元の単位をハイライト** — ソース単位のカードを緑枠で表示
-- **クリックでコピー** — 各カードをクリックで `16px` 形式でクリップボードにコピー
+---
 
 ## テスト
 
-Node.js `assert` モジュールで **122テスト** を実装、全パス確認済み。
+Node.js の `assert` で **87件** のテストを実装し全通過確認済みです。
 
-テストカテゴリ:
-- 定数チェック — `1in=96px`, `1pt=96/72px`, `1pc=12pt`, `1cm=10mm`
-- `toPx` — 全11単位、負の値、未知単位→null
-- `fromPx` — 全11単位、ゼロ、負の値
-- `convert` — 単位間ペア変換
-- `convertAll` — 全キー存在確認、ゼロ変換
-- `formatValue` — null/NaN/Infinity/ゼロ/指数表記
-- Roundtrip — 10ペアすべてで往復変換の一致確認
-- Context sensitivity — baseFontPx/vpWidth/vpHeight/parentPx の変化が正しく反映されるか
-- UNITS配列 — 全11単位の存在確認
-
-## 使い方
-
-https://css-unit-converter.pages.dev/ にアクセスして、値を入力し単位を選ぶだけです。
+- 各単位 → px の変換（toPx）
+- px → 各単位の変換（fromPx）
+- 全10単位のラウンドトリップ（toPx → fromPx が元の値に戻るか）
+- formatNum の境界値
 
 ---
 
-DevNest.io では他にも開発者向けツールを公開しています。
+## 使ってみてください
+
+👉 **[CSS Unit Converter — devnestio](https://css-unit-converter-edi.pages.dev)**
+
+全ツール一覧: https://devnestio.pages.dev
