@@ -3,7 +3,7 @@ title: "Base64エンコーダー/デコーダーを作った — ブラウザ完
 emoji: "🔐"
 type: "tech"
 topics: ["claude", "ai", "devtools", "webdev", "cloudflare"]
-published: true
+published: false
 ---
 
 ## どんなツール？

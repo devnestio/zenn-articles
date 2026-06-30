@@ -3,7 +3,7 @@ title: "Webhook Tester & Inspector を作った — HMAC検証、ペイロード
 emoji: "🪝"
 type: "tech"
 topics: ["claude", "ai", "devtools", "webdev", "javascript"]
-published: true
+published: false
 ---
 
 ## どんなツール？

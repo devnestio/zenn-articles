@@ -3,7 +3,7 @@ title: "Base64画像エンコーダーをVanilla JSで作った話（PNG/JPG/SVG
 emoji: "🖼️"
 type: "tech"
 topics: ["claude", "ai", "devtools", "webdev", "javascript"]
-published: true
+published: false
 ---
 
 ## 作ったもの

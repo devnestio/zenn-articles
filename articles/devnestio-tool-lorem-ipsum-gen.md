@@ -3,7 +3,7 @@ title: "LoremIpsumジェネレーターを作った（Latin/Tech/Business/Hipste
 emoji: "🔤"
 type: "tech"
 topics: ["javascript", "devtools", "cloudflare", "webdev", "design"]
-published: true
+published: false
 ---
 
 ## 作ったもの

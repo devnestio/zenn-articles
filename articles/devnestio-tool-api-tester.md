@@ -3,7 +3,7 @@ title: "APIリクエストテスターをリリース — ブラウザ上でGET/
 emoji: "🚀"
 type: "idea"
 topics: ["api", "javascript", "webdev", "tools"]
-published: true
+published: false
 ---
 
 ## API Request Tester

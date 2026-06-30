@@ -3,7 +3,7 @@ title: "Claudeエージェントに開発を丸投げしたら、無料の開発
 emoji: "🛠"
 type: "tech"
 topics: ["claude", "ai", "devtools", "cloudflare"]
-published: true
+published: false
 ---
 
 # Claudeエージェントに開発を丸投げしたら、無料の開発者ツールが12本できた話

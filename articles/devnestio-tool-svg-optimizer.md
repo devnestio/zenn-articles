@@ -3,7 +3,7 @@ title: "SVG最適化・圧縮ツールをリリース — svg-optimizer"
 emoji: "🎨"
 type: "idea"
 topics: ["svg", "javascript", "webdev", "tools"]
-published: true
+published: false
 ---
 
 ## SVG Optimizer & Minifier

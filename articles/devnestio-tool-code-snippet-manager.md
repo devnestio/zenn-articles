@@ -3,7 +3,7 @@ title: "ブラウザだけで動くコードスニペット管理ツールを作
 emoji: "📋"
 type: "tech"
 topics: ["javascript", "devtools", "cloudflare", "localstorage", "productivity"]
-published: true
+published: false
 ---
 
 ## 作ったもの

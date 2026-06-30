@@ -3,7 +3,7 @@ title: "JSON Schema Validator を作った — Draft-07/2019-09/2020-12対応、
 emoji: "✅"
 type: "tech"
 topics: ["claude", "ai", "devtools", "webdev", "javascript"]
-published: true
+published: false
 ---
 
 ## どんなツール？

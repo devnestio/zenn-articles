@@ -3,7 +3,7 @@ title: "cURL Command Builder を作った — フォームで入力してcurlコ
 emoji: "🌐"
 type: "tech"
 topics: ["claude", "ai", "devtools", "webdev", "curl"]
-published: true
+published: false
 ---
 
 ## どんなツール？

@@ -11,11 +11,10 @@ zenn-auto-publishタスクが次に書く記事を決めるための参照ファ
 - YAML Formatter & Validator — https://devnestio.pages.dev/yaml-formatter/
 - CSV ↔ JSON Converter — https://devnestio.pages.dev/csv-json-converter/
 - Hash Generator — https://hash-generator-745.pages.dev （ファイル保存済み・コミット待ち）
+- Base64 Encoder/Decoder — https://base64-encoder-decoder-3yw.pages.dev （ファイル保存済み・コミット待ち）
 
 ## 未記事化ツール（優先順）
 
-- Cron Expression Builder — https://cron-expression-builder.pages.dev
-- Base64 Encoder/Decoder — https://base64-encoder-decoder-3yw.pages.dev
 - URL Encoder/Decoder — https://url-encoder-decoder-ezs.pages.dev
 - CSS Color Converter — https://css-color-converter.pages.dev/
 - Number Base Converter — https://number-base-converter-eo2.pages.dev

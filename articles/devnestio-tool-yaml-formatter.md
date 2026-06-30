@@ -3,7 +3,7 @@ title: "YAML Formatterをブラウザで完結させた話（インフラ・k8s/
 emoji: "📋"
 type: "tech"
 topics: ["yaml", "devtools", "cloudflare", "javascript", "kubernetes"]
-published: true
+published: false
 ---
 
 ## 作ったもの
