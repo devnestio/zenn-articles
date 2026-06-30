@@ -3,7 +3,7 @@ title: "JWTデバッガー：ブラウザでJWTトークンをデコード・検
 emoji: "🔑"
 type: "idea"
 topics: ["jwt", "security", "javascript", "webdev", "tools"]
-published: true
+published: false
 ---
 
 ## JWT Debugger — 無料オンラインツール
