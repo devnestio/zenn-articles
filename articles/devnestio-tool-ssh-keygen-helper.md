@@ -1,5 +1,5 @@
 ---
-title: "SSH Key Generator HelperをVanilla JSで作った話（コマンドビルダー・鍵種解説・known_hostsチップス）"
+title: "SSH Key Generator HelperをVanilla JSで作った（コマンドビルダー・鍵種解説付き）"
 emoji: "🔑"
 type: "tech"
 topics: ["claude", "ai", "devtools", "ssh", "javascript"]

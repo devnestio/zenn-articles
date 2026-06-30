@@ -1,5 +1,5 @@
 ---
-title: "モックAPIをブラウザで定義してjson-server/MSW/Expressに出力 — devnestioのHTTP Mock Server Configuratorを作った話"
+title: "モックAPIをブラウザで定義してjson-server/MSW/Expressに出力する"
 emoji: "🛠️"
 type: "tech"
 topics: ["claude", "ai", "devtools", "javascript", "cloudflare"]

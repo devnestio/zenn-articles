@@ -1,5 +1,5 @@
 ---
-title: "Nginx Config GeneratorをVanilla JSで作った話（Static/Proxy/PHP-FPM・SSL・レートリミット）"
+title: "Nginx Config GeneratorをVanilla JSで作った話（Static/Proxy/PHP-FPM・SSL）"
 emoji: "⚙️"
 type: "tech"
 topics: ["claude", "ai", "devtools", "nginx", "javascript"]
