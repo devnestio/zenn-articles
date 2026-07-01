@@ -10,7 +10,7 @@ published: false
 
 URL内の特殊文字を安全な形式に変換（パーセントエンコーディング）したり、逆にデコードして読みやすく戻したりするだけのシンプルなツールです。インストール不要・完全無料・ブラウザだけで完結します。
 
-👉 https://url-encoder-decoder-ezs.pages.dev
+👉 https://devnestio.pages.dev/url-encoder/
 
 devnestio（ https://devnestio.pages.dev ）は、英語圏の開発者向けに無料ツールを少しずつ公開しているサイトです。今回はその中のひとつ、URL Encoder/Decoderについてbuilding-in-publicで書いてみます。
 

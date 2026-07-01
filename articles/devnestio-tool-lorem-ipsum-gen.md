@@ -10,7 +10,7 @@ published: false
 
 開発者向け無料ツール群「devnestio」に、**Lorem Ipsum Generator** を追加しました。
 
-👉 https://lorem-ipsum-gen.pages.dev
+👉 https://devnestio.pages.dev/lorem-ipsum-gen/
 
 段落・文・単語の単位でプレースホルダーテキストを生成できます。5種類のワードプールから選択可能です。
 
