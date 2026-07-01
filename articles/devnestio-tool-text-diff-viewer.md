@@ -10,7 +10,7 @@ published: false
 
 [DevNest.io](https://devnestio.pages.dev/) のツールとして作ったテキストDiffビューアです。
 
-**URL**: https://text-diff-viewer.pages.dev/
+**URL**: https://devnestio.pages.dev/text-diff/
 
 2つのテキストを貼り付けると、追加行・削除行・変更なし行を行単位でハイライト表示します。外部ライブラリなし、LCSアルゴリズムをVanilla JSで実装しています。
 
@@ -108,7 +108,7 @@ Node.js `assert` モジュールで **120テスト** を実装、全パス確認
 
 ## 使い方
 
-https://text-diff-viewer.pages.dev/ にアクセスして、Original(A)とModified(B)にテキストを貼り付け、Compareをクリックしてください。
+https://devnestio.pages.dev/text-diff/ にアクセスして、Original(A)とModified(B)にテキストを貼り付け、Compareをクリックしてください。
 
 ---
 
