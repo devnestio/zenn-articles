@@ -10,7 +10,7 @@ published: false
 
 開発者向けの無料ツール群「devnestio」に、**Hash Generator** を追加しました。テキストを貼り付けると、MD5 / SHA-1 / SHA-256 / SHA-384 / SHA-512 のハッシュ値を同時に計算して、16進数で並べて表示するWebツールです。チェックサムの確認や、APIの署名生成の下調べみたいな場面でサッと使えます。
 
-👉 https://hash-generator-745.pages.dev
+👉 https://devnestio.pages.dev/hash-generator/
 
 外部ライブラリゼロ・単一HTMLファイル・サーバー送信なし（すべてブラウザ内で完結）という、devnestioの共通方針に沿って作っています。
 

@@ -10,7 +10,7 @@ published: false
 
 JWTトークンをデコードしてヘッダー・ペイロードをシンタックスハイライト表示し、標準クレームの意味・有効期限・署名アルゴリズムを一覧で確認できるWebツールです。
 
-👉 https://jwt-decoder-38t.pages.dev
+👉 https://devnestio.pages.dev/jwt-decoder/
 
 devnestio（[devnestio.pages.dev](https://devnestio.pages.dev)）で公開している開発者向け無料ツール群の一つです。
 
