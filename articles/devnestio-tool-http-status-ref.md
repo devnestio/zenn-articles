@@ -10,7 +10,7 @@ published: false
 
 開発者向け無料ツール群「devnestio」に、**HTTP Status Code Reference** を追加しました。
 
-👉 https://http-status-ref.pages.dev
+👉 https://devnestio.pages.dev/http-status-ref/
 
 1xx〜5xxまで60件以上のHTTPステータスコードを検索・フィルタリングできます。コード番号・名前・キーワードで検索でき、各コードの説明・ユースケース・RFC参照が確認できます。
 
@@ -140,7 +140,7 @@ Node.js `assert` で **81件のテスト**すべてパス。
 
 ## 使ってみてください
 
-👉 **[HTTP Status Code Reference — devnestio](https://http-status-ref.pages.dev)**
+👉 **[HTTP Status Code Reference — devnestio](https://devnestio.pages.dev/http-status-ref/)**
 
 全ツール一覧: https://devnestio.pages.dev
 

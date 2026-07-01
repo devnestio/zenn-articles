@@ -10,7 +10,7 @@ published: false
 
 [DevNest.io](https://devnestio.pages.dev/) のツールとして作ったカラーコントラストチェッカーです。
 
-**URL**: https://color-contrast-checker.pages.dev/
+**URL**: https://devnestio.pages.dev/color-contrast-checker/
 
 2色を選ぶとコントラスト比を計算し、WCAG 2.1 のAA・AAA基準を満たしているかを即座に判定します。アクセシビリティ対応のWebデザインに必要な情報を、外部依存なしのブラウザのみで提供します。
 
@@ -111,7 +111,7 @@ Node.js `assert` モジュールで **121テスト** を実装、全パス確認
 
 ## 使い方
 
-https://color-contrast-checker.pages.dev/ にアクセスして、前景色と背景色を選ぶだけです。HEX値を直接入力することもできます。
+https://devnestio.pages.dev/color-contrast-checker/ にアクセスして、前景色と背景色を選ぶだけです。HEX値を直接入力することもできます。
 
 ---
 
